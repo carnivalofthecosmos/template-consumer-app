@@ -13,7 +13,7 @@ const app = new App();
 const project = new ConsumerProjectStack(app, "TemplateApp");
 
 const ecrRepo = new Repository(project, "EcrRepo", {
-  repositoryName: `app-${project.Project}/demo`.toLocaleLowerCase()
+  repositoryName: `app-${project.Project}/demo`.toLowerCase()
 });
 // const codeRepo = new CodeRepo(project, "CodeRepo");
 // const codePipeline = new NodePipeline(project, "CodePipeline");
