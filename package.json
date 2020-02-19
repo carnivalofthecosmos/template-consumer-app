@@ -1,0 +1,32 @@
+{
+  "name": "template-consumer-app",
+  "version": "0.1.0",
+  "bin": {
+    "template-consumer-app": "bin/template-consumer-app.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.24.0",
+    "@types/jest": "^24.0.22",
+    "@types/node": "10.17.5",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "aws-cdk": "1.24.0",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.7.2"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-ecr": "1.24.0",
+    "@aws-cdk/aws-ecs": "1.24.0",
+    "@aws-cdk/core": "1.24.0",
+    "@carnivalofthecosmos/bootstrap": "0.0.1-alpha.10",
+    "@carnivalofthecosmos/core": "0.0.1-alpha.10",
+    "@carnivalofthecosmos/service": "0.0.1-alpha.10",
+    "source-map-support": "^0.5.16"
+  }
+}
