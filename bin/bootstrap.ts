@@ -5,6 +5,4 @@ import { ConsumerBootstrapStack } from "@carnivalofthecosmos/bootstrap";
 
 const app = new App();
 
-new ConsumerBootstrapStack(app, "TemplateApp", {
-  description: "Test Des"
-});
+new ConsumerBootstrapStack(app, "TemplateApp");

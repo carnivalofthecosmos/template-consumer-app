@@ -20,9 +20,9 @@ const ecrRepo = new Repository(project, "EcrRepo", {
 
 const account = new ConsumerAccountStack(project, "Mgt");
 
-// const dev = new EnvStack(account, "Dev", {
-//   ecrRepo
-// });
+const dev = new EnvStack(account, "Dev", {
+  ecrRepo
+});
 
 // const tst = new EnvStack(account, "Tst", {
 //   ecrRepo
