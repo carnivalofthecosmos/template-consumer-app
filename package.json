@@ -25,10 +25,10 @@
     "@aws-cdk/aws-ecs": "1.24.0",
     "@aws-cdk/core": "1.24.0",
     "@aws-cdk/aws-codecommit": "1.24.0",
-    "@carnivalofthecosmos/bootstrap": "0.0.1-alpha.15",
-    "@carnivalofthecosmos/core": "0.0.1-alpha.13",
-    "@carnivalofthecosmos/service": "0.0.1-alpha.13",
-    "@carnivalofthecosmos/pipeline": "0.0.1-alpha.15",
+    "@carnivalofthecosmos/bootstrap": "0.0.1-alpha.16",
+    "@carnivalofthecosmos/core": "0.0.1-alpha.16",
+    "@carnivalofthecosmos/service": "0.0.1-alpha.16",
+    "@carnivalofthecosmos/pipeline": "0.0.1-alpha.16",
     "source-map-support": "^0.5.16"
   }
 }
