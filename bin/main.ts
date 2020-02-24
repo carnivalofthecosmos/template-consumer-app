@@ -40,6 +40,4 @@ codePipeline.addDeployEnvStage(dev, {
 const tst = new EnvStack(account, "Tst", {
   ecrRepo
 });
-codePipeline.addDeployEnvStage(tst, {
-  isManualApprovalRequired: true
-});
+codePipeline.addDeployEnvStage(tst);
