@@ -30,12 +30,12 @@ const codePipeline = new AppNodePipeline(project, "CodePipeline", {
 
 const account = new ConsumerAccountStack(project, "Mgt");
 
-const dev = new EnvStack(account, "Dev", {
-  ecrRepo
-});
-codePipeline.addDeployEnvStage(dev, false);
+// const dev = new EnvStack(account, "Dev", {
+//   ecrRepo
+// });
+// codePipeline.addDeployEnvStage(dev, false);
 
-const tst = new EnvStack(account, "Tst", {
-  ecrRepo
-});
-codePipeline.addDeployEnvStage(tst);
+// const tst = new EnvStack(account, "Tst", {
+//   ecrRepo
+// });
+// codePipeline.addDeployEnvStage(tst);
