@@ -19,10 +19,10 @@
     "@aws-cdk/aws-ecs": "^1.25.0",
     "@aws-cdk/aws-elasticloadbalancingv2-targets": "^1.25.0",
     "@aws-cdk/core": "^1.25.0",
-    "@carnivalofthecosmos/bootstrap": "0.0.1-alpha.19",
-    "@carnivalofthecosmos/core": "0.0.1-alpha.19",
-    "@carnivalofthecosmos/pipeline": "0.0.1-alpha.19",
-    "@carnivalofthecosmos/service": "0.0.1-alpha.19",
+    "@carnivalofthecosmos/bootstrap": "^0.0.1-alpha.19",
+    "@carnivalofthecosmos/core": "^0.0.1-alpha.19",
+    "@carnivalofthecosmos/pipeline": "^0.0.1-alpha.19",
+    "@carnivalofthecosmos/service": "^0.0.1-alpha.19",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
