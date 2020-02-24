@@ -10,8 +10,23 @@
     "test": "jest",
     "cdk": "cdk"
   },
+  "dependencies": {
+    "@aws-cdk/aws-codebuild": "^1.25.0",
+    "@aws-cdk/aws-codecommit": "^1.25.0",
+    "@aws-cdk/aws-codepipeline": "^1.25.0",
+    "@aws-cdk/aws-codepipeline-actions": "^1.25.0",
+    "@aws-cdk/aws-ecr": "^1.25.0",
+    "@aws-cdk/aws-ecs": "^1.25.0",
+    "@aws-cdk/aws-elasticloadbalancingv2-targets": "^1.25.0",
+    "@aws-cdk/core": "^1.25.0",
+    "@carnivalofthecosmos/bootstrap": "0.0.1-alpha.19",
+    "@carnivalofthecosmos/core": "0.0.1-alpha.19",
+    "@carnivalofthecosmos/pipeline": "0.0.1-alpha.19",
+    "@carnivalofthecosmos/service": "0.0.1-alpha.19",
+    "source-map-support": "^0.5.16"
+  },
   "devDependencies": {
-    "@aws-cdk/assert": "1.24.0",
+    "@aws-cdk/assert": "^1.25.0",
     "@types/jest": "^24.0.22",
     "@types/node": "10.17.5",
     "jest": "^24.9.0",
@@ -19,16 +34,5 @@
     "aws-cdk": "1.24.0",
     "ts-node": "^8.1.0",
     "typescript": "~3.7.2"
-  },
-  "dependencies": {
-    "@aws-cdk/aws-ecr": "1.24.0",
-    "@aws-cdk/aws-ecs": "1.24.0",
-    "@aws-cdk/core": "1.24.0",
-    "@aws-cdk/aws-codecommit": "1.24.0",
-    "@carnivalofthecosmos/bootstrap": "0.0.1-alpha.18",
-    "@carnivalofthecosmos/core": "0.0.1-alpha.17",
-    "@carnivalofthecosmos/service": "0.0.1-alpha.17",
-    "@carnivalofthecosmos/pipeline": "0.0.1-alpha.18",
-    "source-map-support": "^0.5.16"
   }
 }
