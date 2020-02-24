@@ -19,7 +19,7 @@ const ecrRepo = new EcrRepository(project, "EcrRepo", {
 });
 
 const codeRepo = new CodeRepository(project, "CodeRepo", {
-  repositoryName: `app-${project.Project}-main-repo`
+  repositoryName: `app-${project.Project}-main-repo`.toLocaleLowerCase()
 });
 
 const codePipeline = new AppNodePipeline(project, "CodePipeline", {
@@ -30,12 +30,16 @@ const codePipeline = new AppNodePipeline(project, "CodePipeline", {
 
 const account = new ConsumerAccountStack(project, "Mgt");
 
-// const dev = new EnvStack(account, "Dev", {
-//   ecrRepo
-// });
-// codePipeline.addDeployEnvStage(dev, false);
+const dev = new EnvStack(account, "Dev", {
+  ecrRepo
+});
+codePipeline.addDeployEnvStage(dev, {
+  isManualApprovalRequired: false
+});
 
-// const tst = new EnvStack(account, "Tst", {
-//   ecrRepo
-// });
-// codePipeline.addDeployEnvStage(tst);
+const tst = new EnvStack(account, "Tst", {
+  ecrRepo
+});
+codePipeline.addDeployEnvStage(tst, {
+  isManualApprovalRequired: true
+});
