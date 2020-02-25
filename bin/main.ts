@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 import "source-map-support/register";
 import { App } from "@aws-cdk/core";
-import { AppProjectStack, AppAccountStack, AppEnvStack } from "../lib";
+import {
+  AppProjectStack,
+  AppAccountStack,
+  AppEnvStack,
+  AppCiCdStack
+} from "../lib";
 
 const app = new App();
 
@@ -9,14 +14,18 @@ const app = new App();
 const project = new AppProjectStack(app, "TemplateApp");
 
 // Account Level Infra
-const account = new AppAccountStack(project, "Mgt");
+const mgtAccount = new AppAccountStack(project, "Mgt");
+
+// CiCd Level Infra
+const ciCd = new AppCiCdStack(mgtAccount);
 
 // Dev Env Infra
-const dev = new AppEnvStack(account, "Dev");
-project.CodePipeline.addDeployEnvStage(dev, {
-  isManualApprovalRequired: false
-});
+// const dev = new AppEnvStack(mgtAccount, "Dev");
+// cicid.addCdkDeployEnvStageToPipeline({
+//   appEnv: dev,
+//   isManualApprovalRequired: false
+// });
 
 // Tst Env Infra
-const tst = new AppEnvStack(account, "Tst");
-project.CodePipeline.addDeployEnvStage(tst);
+// const tst = new AppEnvStack(mgtAccount, "Tst");
+// cicid.addCdkDeployEnvStageToPipeline({ appEnv: tst });

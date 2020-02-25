@@ -2,11 +2,9 @@ import { Construct } from "@aws-cdk/core";
 import { Repository as EcrRepository } from "@aws-cdk/aws-ecr";
 import { Repository as CodeRepository } from "@aws-cdk/aws-codecommit";
 import { ConsumerProjectStack } from "@carnivalofthecosmos/core";
-import { AppNodePipeline } from "@carnivalofthecosmos/pipeline";
 
 export class AppProjectStack extends ConsumerProjectStack {
   readonly CodeRepo: CodeRepository;
-  readonly CodePipeline: AppNodePipeline;
   readonly DockerRepo: EcrRepository;
 
   constructor(scope: Construct, id: string) {
@@ -16,14 +14,28 @@ export class AppProjectStack extends ConsumerProjectStack {
       repositoryName: `app-${this.Name}-main-repo`.toLocaleLowerCase()
     });
 
-    this.CodePipeline = new AppNodePipeline(this, "CodePipeline", {
-      name: `App-${this.Name}-Main-Pipeline`,
-      codeRepo: this.CodeRepo,
-      buildCommands: ["npm run build"]
-    });
-
     this.DockerRepo = new EcrRepository(this, "EcrRepo", {
       repositoryName: `app-${this.Name}/demo`.toLowerCase()
     });
   }
 }
+
+// interface IConsumerNaming {
+//   scope: IConsumerProject | IConsumerAccount | IConsumerAppEnv;
+//   name: string;
+//   type: string;
+//   delimiter?: string;
+// }
+
+// const consumerNaming = (props: IConsumerNaming) => {
+//   const { scope, name, type, delimiter = "-" } = props;
+//   let scopeName = "";
+//   switch (scope.Type) {
+//     case "ConsumerAppEnv":
+//       scopeName += scope.Name + delimiter;
+//       break;
+//     case "ConsumerAccount":
+//       scopeName += scope.Name + delimiter;
+//   }
+//   return `app-${this.Name}-main-repo`;
+// };
