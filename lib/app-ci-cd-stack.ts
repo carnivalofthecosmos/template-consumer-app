@@ -16,16 +16,21 @@ export class AppCiCdStack extends ConsumerCiCdStack {
 
     this.Account = account;
 
-    const codeRepo = this.Account.Project.CodeRepo;
+    const { CodeRepo, EcrRepo } = this.Account.Project;
 
     this.CodePipeline = new AppNodePipeline(this, "CodePipeline", {
       name: `App-${this.Account.Project.Name}-Main-Pipeline`,
       codeRepo: Repository.fromRepositoryName(
         this,
-        codeRepo.node.id,
-        codeRepo.repositoryName
+        CodeRepo.node.id,
+        CodeRepo.repositoryName
       ),
-      buildCommands: ["npm run build"]
+      buildCommands: ["npm run build"],
+      buildEnvs: {
+        ECR_URL: {
+          value: EcrRepo.repositoryUri
+        }
+      }
     });
   }
 

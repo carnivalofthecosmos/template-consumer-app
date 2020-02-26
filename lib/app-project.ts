@@ -5,7 +5,7 @@ import { ConsumerProjectStack } from "@carnivalofthecosmos/core";
 
 export class AppProjectStack extends ConsumerProjectStack {
   readonly CodeRepo: CodeRepository;
-  readonly DockerRepo: EcrRepository;
+  readonly EcrRepo: EcrRepository;
 
   constructor(scope: Construct, id: string) {
     super(scope, id);
@@ -14,7 +14,7 @@ export class AppProjectStack extends ConsumerProjectStack {
       repositoryName: `app-${this.Name}-main-repo`.toLocaleLowerCase()
     });
 
-    this.DockerRepo = new EcrRepository(this, "EcrRepo", {
+    this.EcrRepo = new EcrRepository(this, "EcrRepo", {
       repositoryName: `app-${this.Name}/demo`.toLowerCase()
     });
   }
