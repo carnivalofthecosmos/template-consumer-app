@@ -19,23 +19,3 @@ export class AppProjectStack extends ConsumerProjectStack {
     });
   }
 }
-
-// interface IConsumerNaming {
-//   scope: IConsumerProject | IConsumerAccount | IConsumerAppEnv;
-//   name: string;
-//   type: string;
-//   delimiter?: string;
-// }
-
-// const consumerNaming = (props: IConsumerNaming) => {
-//   const { scope, name, type, delimiter = "-" } = props;
-//   let scopeName = "";
-//   switch (scope.Type) {
-//     case "ConsumerAppEnv":
-//       scopeName += scope.Name + delimiter;
-//       break;
-//     case "ConsumerAccount":
-//       scopeName += scope.Name + delimiter;
-//   }
-//   return `app-${this.Name}-main-repo`;
-// };
