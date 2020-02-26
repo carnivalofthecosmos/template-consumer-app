@@ -32,6 +32,10 @@ export class AppCiCdStack extends ConsumerCiCdStack {
         }
       }
     });
+
+    this.CodePipeline.Build.role?.addManagedPolicy({
+      managedPolicyArn: `arn:aws:iam::aws:policy/AdministratorAccess` // FIXME:
+    });
   }
 
   addCdkDeployEnvStageToPipeline(props: {
