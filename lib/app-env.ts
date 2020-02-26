@@ -21,11 +21,11 @@ export class AppEnvStack extends ConsumerEcsAppEnvStack {
     super(account, name, props);
 
     const { tag = "latest" } = props || {};
-    const { DockerRepo } = this.Account.Project;
+    const { EcrRepo } = this.Account.Project;
 
     new EcsService(this, "Frontend", {
       container: {
-        image: ContainerImage.fromEcrRepository(DockerRepo, tag)
+        image: ContainerImage.fromEcrRepository(EcrRepo, tag)
       },
       service: {},
       routing: {
