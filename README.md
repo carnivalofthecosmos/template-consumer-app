@@ -16,3 +16,8 @@ Steps:
 4. Aws Cli Login.
 5. Bootstrap, run `npx cdk deploy App-${ProjectName}-*` (Please change to your project name).
 6. Update git remote url `git remote set-url origin "https://git-codecommit.ap-southeast-2.amazonaws.com/v1/repos/app-${ProjectName}-cdk-repo"` (Please change Project name and region etc as required).
+7. Push your custom version of the template to your app cdk repo, `git push`
+8. Done: Now use the app cdk pipeline to deploy any further changes to your app cdk code (Pipeline Named `App-${ProjectName}-Cdk-Pipeline`)
+
+# Whats included
+ TODO: 
