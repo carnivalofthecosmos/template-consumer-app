@@ -25,7 +25,12 @@ export class AppCiCdStack extends ConsumerCiCdStack {
         codeRepo.node.id,
         codeRepo.repositoryName
       ),
-      buildCommands: ["npm run build"]
+      buildCommands: ["npm run build"],
+      buildEnvs: {
+        ECR_URL: {
+          value: this.Account.Project.DockerRepo.repositoryUri
+        }
+      }
     });
   }
 
