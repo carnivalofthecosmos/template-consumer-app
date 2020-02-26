@@ -20,12 +20,12 @@ const mgtAccount = new AppAccountStack(project, "Mgt");
 const ciCd = new AppCiCdStack(mgtAccount);
 
 // Dev Env Infra
-const dev = new AppEnvStack(mgtAccount, "Dev");
-ciCd.addCdkDeployEnvStageToPipeline({
-  appEnv: dev,
-  isManualApprovalRequired: false
-});
+// const dev = new AppEnvStack(mgtAccount, "Dev");
+// ciCd.addCdkDeployEnvStageToPipeline({
+//   appEnv: dev,
+//   isManualApprovalRequired: false
+// });
 
 // Tst Env Infra
-const tst = new AppEnvStack(mgtAccount, "Tst");
-ciCd.addCdkDeployEnvStageToPipeline({ appEnv: tst });
+// const tst = new AppEnvStack(mgtAccount, "Tst");
+// ciCd.addCdkDeployEnvStageToPipeline({ appEnv: tst });
